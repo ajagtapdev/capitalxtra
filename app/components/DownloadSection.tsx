@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { ArrowRight, Smartphone } from "lucide-react";
+import { Smartphone } from "lucide-react";
 import Image from "next/image";
 
 export default function DownloadSection() {

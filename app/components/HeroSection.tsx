@@ -1,7 +1,6 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import Image from 'next/image';
 import { ChevronRight, CreditCard, Check, Smartphone } from 'lucide-react';
 
 export default function HeroSection() {
