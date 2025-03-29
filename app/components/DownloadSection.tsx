@@ -1,8 +1,6 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { ArrowRight, Smartphone, CreditCard } from "lucide-react";
-import Image from "next/image";
 
 export default function DownloadSection() {
   return (
@@ -109,70 +107,29 @@ export default function DownloadSection() {
                 <div className="px-6 py-8 relative z-10">
                   <div className="flex justify-between items-center mb-8">
                     <div className="flex items-center">
-                      <CreditCard className="h-8 w-8 text-accent mr-2" />
-                      <span className="text-2xl font-bold bg-gradient-to-r from-accent to-primary bg-clip-text text-transparent">
-                        capitalX
-                      </span>
+                      <div className="w-10 h-10 bg-blue-500 rounded-full flex items-center justify-center">
+                        <span className="text-white font-semibold">A</span>
+                      </div>
+                      <div className="ml-3">
+                        <p className="text-white font-medium">
+                          Amazon Purchase
+                        </p>
+                        <p className="text-gray-400 text-sm">
+                          Apr 15, 2023
+                        </p>
+                      </div>
                     </div>
-                    <Smartphone className="h-6 w-6 text-gray-400" />
+                    <span className="text-white font-semibold">
+                      $129.99
+                    </span>
                   </div>
-
-                  <div className="space-y-6">
-                    <div className="p-4 bg-[#1A2234] rounded-xl">
-                      <div className="flex justify-between items-center mb-3">
-                        <div className="flex items-center">
-                          <div className="w-10 h-10 bg-blue-500 rounded-full flex items-center justify-center">
-                            <span className="text-white font-semibold">A</span>
-                          </div>
-                          <div className="ml-3">
-                            <p className="text-white font-medium">
-                              Amazon Purchase
-                            </p>
-                            <p className="text-gray-400 text-sm">
-                              Apr 15, 2023
-                            </p>
-                          </div>
-                        </div>
-                        <span className="text-white font-semibold">
-                          $129.99
-                        </span>
-                      </div>
-                      <div className="bg-[#0F172A] p-3 rounded-lg">
-                        <p className="text-accent font-medium">
-                          Recommended Card: Chase Freedom
-                        </p>
-                        <p className="text-gray-400 text-sm">
-                          5% cashback on Amazon purchases
-                        </p>
-                      </div>
-                    </div>
-
-                    <div className="p-4 bg-[#1A2234] rounded-xl">
-                      <div className="flex justify-between items-center mb-3">
-                        <div className="flex items-center">
-                          <div className="w-10 h-10 bg-green-500 rounded-full flex items-center justify-center">
-                            <span className="text-white font-semibold">S</span>
-                          </div>
-                          <div className="ml-3">
-                            <p className="text-white font-medium">
-                              Starbucks Coffee
-                            </p>
-                            <p className="text-gray-400 text-sm">
-                              Apr 14, 2023
-                            </p>
-                          </div>
-                        </div>
-                        <span className="text-white font-semibold">$5.45</span>
-                      </div>
-                      <div className="bg-[#0F172A] p-3 rounded-lg">
-                        <p className="text-accent font-medium">
-                          Recommended Card: Amex Gold
-                        </p>
-                        <p className="text-gray-400 text-sm">
-                          4x points on dining
-                        </p>
-                      </div>
-                    </div>
+                  <div className="bg-[#0F172A] p-3 rounded-lg">
+                    <p className="text-accent font-medium">
+                      Recommended Card: Chase Freedom
+                    </p>
+                    <p className="text-gray-400 text-sm">
+                      5% cashback on Amazon purchases
+                    </p>
                   </div>
                 </div>
               </div>
