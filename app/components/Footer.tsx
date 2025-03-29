@@ -8,7 +8,7 @@ export default function Footer() {
         <div className="flex flex-col md:flex-row justify-between items-center">
           <div className="mb-8 md:mb-0">
             <div className="flex items-center space-x-2 mb-4">
-              <CreditCard className="h-8 w-8 text-accent" />
+              <CreditCard className="h-8 w-8 text-accent"/>
               <span className="text-2xl font-bold bg-gradient-to-r from-accent to-primary bg-clip-text text-transparent">
                 capitalX
               </span>
