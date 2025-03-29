@@ -8,7 +8,7 @@ export default function TermsOfService() {
         
         <h2>1. Acceptance of Terms</h2>
         <p>
-          By accessing or using the capitalX application, you agree to be bound by these Terms of Service 
+          By accessing or using capitalX, you agree to be bound by these Terms of Service 
           and all applicable laws and regulations. If you do not agree with any of these terms, you are 
           prohibited from using the application.
         </p>
