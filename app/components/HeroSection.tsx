@@ -125,7 +125,7 @@ export default function HeroSection() {
               initial={{ opacity: 0, x: 20, y: -20 }}
               animate={{ opacity: 1, x: 0, y: 0 }}
               transition={{ duration: 0.7, delay: 0.5 }}
-              className="absolute top-0 right-0 bg-accent p-2 rounded-full shadow-lg"
+              className="absolute -top-4 -right-4 bg-accent p-2 rounded-full shadow-lg"
             >
               <Smartphone className="h-6 w-6 text-white" />
             </motion.div>
@@ -134,7 +134,7 @@ export default function HeroSection() {
               initial={{ opacity: 0, x: -20, y: 20 }}
               animate={{ opacity: 1, x: 0, y: 0 }}
               transition={{ duration: 0.7, delay: 0.7 }}
-              className="absolute bottom-0 left-0 bg-primary p-2 rounded-full shadow-lg"
+              className="absolute -bottom-4 -left-4 bg-primary p-2 rounded-full shadow-lg"
             >
               <Check className="h-6 w-6 text-white" />
             </motion.div>
