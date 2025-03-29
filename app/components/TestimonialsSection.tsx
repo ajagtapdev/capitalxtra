@@ -2,6 +2,7 @@
 
 import { motion } from 'framer-motion';
 import { Star, Quote } from 'lucide-react';
+import Image from 'next/image';
 
 const testimonials = [
   {
@@ -73,11 +74,14 @@ export default function TestimonialsSection() {
                 </div>
                 
                 <div className="flex items-center">
-                  <div className="w-12 h-12 rounded-full overflow-hidden mr-4">
-                    <img 
+                  <div className="w-12 h-12 rounded-full overflow-hidden mr-4 relative">
+                    <Image 
                       src={testimonial.image} 
                       alt={testimonial.name} 
-                      className="w-full h-full object-cover" 
+                      fill
+                      sizes="(max-width: 768px) 100vw, 48px"
+                      className="object-cover"
+                      unoptimized
                     />
                   </div>
                   <div>
