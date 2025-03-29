@@ -5,21 +5,21 @@ import { Star, Quote } from 'lucide-react';
 
 const testimonials = [
   {
-    name: "Sarah Johnson",
+    name: "Aarush ",
     role: "Frequent Traveler",
     content: "capitalX has transformed how I use my credit cards. I earned enough points for a free flight in just 3 months by using the right card for each purchase!",
     rating: 5,
     image: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=256&h=256&auto=format&fit=crop"
   },
   {
-    name: "Michael Chen",
+    name: "Alan ",
     role: "Tech Professional",
     content: "The AI recommendations are spot on. I've maximized my cashback on everyday purchases without having to think about which card to use. Highly recommend!",
     rating: 5,
     image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=256&h=256&auto=format&fit=crop"
   },
   {
-    name: "Jessica Williams",
+    name: "Lucas",
     role: "Small Business Owner",
     content: "As someone juggling business and personal expenses, capitalX has been a game-changer. The app helps me optimize rewards across all my cards effortlessly.",
     rating: 4,
