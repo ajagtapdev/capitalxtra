@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { CreditCard, Github } from "lucide-react";
+
 import { Var, T } from "gt-next";
 
 export default function Footer() {

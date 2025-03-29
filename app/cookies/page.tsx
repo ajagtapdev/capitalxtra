@@ -12,7 +12,7 @@ export default function CookiesPolicy() {
 						Last updated: <Var>{new Date().toLocaleDateString()}</Var>
 					</p>
 
-					<h2>1. What Are Cookies</h2>
+					<h2>1. What Are Cookies  </h2>
 					<p>
 						Cookies are small text files that are placed on your device when you
 						visit a website or use a mobile application. They are widely used to
