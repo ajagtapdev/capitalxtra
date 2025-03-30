@@ -1,17 +1,24 @@
 import Link from "next/link";
-import { CreditCard, Github } from "lucide-react";
+import { Github } from "lucide-react";
+import Image from "next/image";
 
 import { Var, T } from "gt-next";
 
 export default function Footer() {
 	return (
 		<T id="components.footer.0">
-			<footer className="bg-[#060A13] pt-16 pb-8 border-t border-[#1E293B]">
+			<footer className="bg-[#1A1F2E] pt-16 pb-8 border-t border-[#2D3748]">
 				<div className="container mx-auto px-4 sm:px-6 lg:px-8">
 					<div className="flex flex-col md:flex-row justify-between items-center">
 						<div className="mb-8 md:mb-0">
 							<div className="flex items-center space-x-2 mb-4">
-								<CreditCard className="h-8 w-8 text-accent" />
+								<Image
+									src="/images/1by1.png"
+									alt="capitalX Logo"
+									width={40}
+									height={40}
+									className="h-10 w-10"
+								/>
 								<span className="text-2xl font-bold bg-gradient-to-r from-accent to-primary bg-clip-text text-transparent">
 									capitalX
 								</span>

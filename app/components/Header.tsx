@@ -2,22 +2,29 @@
 
 import { useState } from "react";
 import Link from "next/link";
-import { Menu, X, CreditCard } from "lucide-react";
+import { Menu, X } from "lucide-react";
 import { motion } from "framer-motion";
 import { T, Var } from "gt-next";
 import { LocaleSelector } from "gt-next/client";
+import Image from "next/image";
 
 export default function Header() {
 	const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
 	return (
 		<T id="components.header.1">
-			<header className="fixed top-0 left-0 right-0 z-50 bg-[#090D15]/80 backdrop-blur-md border-b border-[#1E293B]">
+			<header className="fixed top-0 left-0 right-0 z-50 bg-[#1A1F2E]/80 backdrop-blur-md border-b border-[#2D3748]">
 				<div className="container mx-auto px-4 sm:px-6 lg:px-8">
 					<div className="flex items-center justify-between h-16">
 						<div className="flex items-center">
 							<Link href="/" className="flex items-center space-x-2">
-								<CreditCard className="h-8 w-8 text-accent" />
+								<Image
+									src="/images/1by1.png"
+									alt="capitalX Logo"
+									width={40}
+									height={40}
+									className="h-10 w-10"
+								/>
 								<span className="text-2xl font-bold bg-gradient-to-r from-accent to-primary bg-clip-text text-transparent">
 									capitalX
 								</span>
