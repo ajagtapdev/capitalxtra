@@ -10,8 +10,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-	title: "capitalX - AI-Powered Credit Card Management",
-	description: "Automatically select the best credit card for every purchase",
+	title: "capitalX",
+	description: "AI powered credit card management",
 	icons: {
 		icon: "/favicon.ico",
 	},
