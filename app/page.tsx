@@ -5,6 +5,7 @@ import HowItWorksSection from "./components/HowItWorksSection";
 import TestimonialsSection from "./components/TestimonialsSection";
 import DownloadSection from "./components/DownloadSection";
 import Footer from "./components/Footer";
+import VideoDemoSection from './components/VideoDemoSection';
 
 export default function Home() {
   return (
@@ -12,10 +13,11 @@ export default function Home() {
       <Header />
       <main>
         <HeroSection />
-        <DownloadSection />
         <FeaturesSection />
+        <VideoDemoSection />
         <HowItWorksSection />
         <TestimonialsSection />
+        <DownloadSection />
       </main>
       <Footer />
     </div>

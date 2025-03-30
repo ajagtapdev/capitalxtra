@@ -15,6 +15,14 @@ export const metadata: Metadata = {
 	icons: {
 		icon: "/favicon.ico",
 	},
+	openGraph: {
+		videos: [{
+			url: 'https://youtu.be/w17OE9qXFHc',
+			width: 1280,
+			height: 720,
+			type: 'video/mp4',
+		}]
+	}
 };
 
 export default async function RootLayout({
