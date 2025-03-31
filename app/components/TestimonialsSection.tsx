@@ -8,7 +8,7 @@ import { Var, T } from "gt-next";
 const testimonials = [
 	{
 		name: "Aarush ",
-		role: "Frequent Traveler",
+		role: "ML Engineer",
 		content:
 			"capitalX has transformed how I use my credit cards. I earned enough points for a free flight in just 3 months by using the right card for each purchase!",
 		rating: 5,
@@ -17,7 +17,7 @@ const testimonials = [
 	},
 	{
 		name: "Alan ",
-		role: "Tech Professional",
+		role: "Frontend Developer",
 		content:
 			"The AI recommendations are spot on. I've maximized my cashback on everyday purchases without having to think about which card to use. Highly recommend!",
 		rating: 5,
@@ -26,7 +26,7 @@ const testimonials = [
 	},
 	{
 		name: "Lucas",
-		role: "Small Business Owner",
+		role: "Backend Developer",
 		content:
 			"As someone juggling business and personal expenses, capitalX has been a game-changer. The app helps me optimize rewards across all my cards effortlessly.",
 		rating: 4,
@@ -138,7 +138,7 @@ export default function TestimonialsSection() {
 									</p>
 								</div>
 								<a
-									href="#download"
+									href="https://devpost.com/software/capitalx"
 									className="bg-primary hover:bg-primary-dark text-white px-8 py-3 rounded-full transition-colors font-medium text-lg whitespace-nowrap"
 								>
 									Get Started

@@ -2,8 +2,23 @@
 
 import { motion } from "framer-motion";
 import Image from "next/image";
-import { ChevronRight, Check, Smartphone } from "lucide-react";
+import { ChevronRight, Check, Smartphone, Wand2, Star, Shield } from "lucide-react";
 import { T } from "gt-next";
+
+const keyFeatures = [
+	{
+		label: "Smart Card Selection",
+		icon: <Wand2 className="text-accent mr-2 h-5 w-5" />
+	},
+	{
+		label: "Real-time Rewards",
+		icon: <Star className="text-accent mr-2 h-5 w-5" />
+	},
+	{
+		label: "Secure Storage",
+		icon: <Shield className="text-accent mr-2 h-5 w-5" />
+	}
+];
 
 export default function HeroSection() {
 	return (
@@ -31,40 +46,33 @@ export default function HeroSection() {
 								</h1>
 
 								<p className="text-lg md:text-xl text-gray-300 mb-8 max-w-2xl">
-									capitalX automatically selects the best credit card for every
-									purchase, maximizing your rewards and benefits in real-time.
+									capitalX uses advanced AI to automatically select the best credit card for every purchase, 
+									maximizing your rewards and benefits in real-time. 
 								</p>
 
 								<div className="flex flex-col sm:flex-row gap-4 mb-8">
 									<a
-										href="#download"
+										href="#demo"
 										className="inline-flex items-center justify-center bg-primary hover:bg-primary-dark text-white px-8 py-3 rounded-full text-lg font-medium transition-colors"
 									>
-										Get Started
+										Watch Demo
 										<ChevronRight className="ml-2 h-5 w-5" />
 									</a>
-
 									<a
-										href="#how-it-works"
+										href="https://devpost.com/software/capitalx"
 										className="inline-flex items-center justify-center bg-[#1E293B] hover:bg-[#2D3748] text-white px-8 py-3 rounded-full text-lg font-medium transition-colors"
 									>
-										How It Works
+										Get Started
 									</a>
 								</div>
 
-								<div className="flex items-center space-x-8">
-									<div className="flex items-center">
-										<Check className="text-accent mr-2 h-5 w-5" />
-										<span className="text-gray-300">Free Download</span>
-									</div>
-									<div className="flex items-center">
-										<Check className="text-accent mr-2 h-5 w-5" />
-										<span className="text-gray-300">AI Powered</span>
-									</div>
-									<div className="flex items-center">
-										<Check className="text-accent mr-2 h-5 w-5" />
-										<span className="text-gray-300">Secure</span>
-									</div>
+								<div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+									{keyFeatures.map((feature, index) => (
+										<div key={index} className="flex items-center bg-[#1A1F2E] rounded-lg p-4">
+											{feature.icon}
+											<span className="text-gray-300">{feature.label}</span>
+										</div>
+									))}
 								</div>
 							</motion.div>
 						</div>

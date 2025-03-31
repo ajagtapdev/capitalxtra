@@ -3,13 +3,18 @@
 import { useState } from "react";
 import Link from "next/link";
 import { Menu, X } from "lucide-react";
-import { motion } from "framer-motion";
 import { T, Var } from "gt-next";
-import { LocaleSelector } from "gt-next/client";
 import Image from "next/image";
+import { scrollToSection } from '../utils/scroll';
 
 export default function Header() {
 	const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+
+	const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, sectionId: string) => {
+		e.preventDefault();
+		scrollToSection(sectionId.replace('#', ''));
+		setMobileMenuOpen(false);
+	};
 
 	return (
 		<T id="components.header.1">
@@ -34,44 +39,38 @@ export default function Header() {
 						<nav className="hidden lg:block">
 							<ul className="flex space-x-8">
 								<li>
-									<Link
+									<a
+										href="#demo"
+										onClick={(e) => handleNavClick(e, 'demo')}
+										className="text-foreground hover:text-accent transition-colors"
+									>
+										Demo
+									</a>
+								</li>
+								<li>
+									<a
 										href="#features"
+										onClick={(e) => handleNavClick(e, 'features')}
 										className="text-foreground hover:text-accent transition-colors"
 									>
 										Features
-									</Link>
+									</a>
 								</li>
 								<li>
-									<Link
+									<a
 										href="#how-it-works"
+										onClick={(e) => handleNavClick(e, 'how-it-works')}
 										className="text-foreground hover:text-accent transition-colors"
 									>
 										How it Works
-									</Link>
-								</li>
-								<li>
-									<Link
-										href="#testimonials"
-										className="text-foreground hover:text-accent transition-colors"
-									>
-										Testimonials
-									</Link>
-								</li>
-								<li>
-									<Link
-										href="#download"
-										className="text-foreground hover:text-accent transition-colors"
-									>
-										Download
-									</Link>
+									</a>
 								</li>
 							</ul>
 						</nav>
 
-						<div className="hidden lg:flex gap-x-8">
-							<LocaleSelector />
+						<div className="hidden lg:flex gap-x-4">
 							<Link
-								href="#download"
+								href="https://devpost.com/software/capitalx"
 								className="bg-primary hover:bg-primary-dark text-white px-6 py-2 rounded-full transition-colors font-medium"
 							>
 								Get Started
@@ -80,7 +79,7 @@ export default function Header() {
 
 						<div className="lg:hidden">
 							<button
-								className="text-white"
+								className="text-white p-2"
 								onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
 							>
 								<Var>
@@ -96,57 +95,42 @@ export default function Header() {
 				</div>
 
 				{/* Mobile menu */}
-				<Var>
-					{mobileMenuOpen && (
-						<T id="components.header.0">
-							<motion.div
-								initial={{ opacity: 0, y: -20 }}
-								animate={{ opacity: 1, y: 0 }}
-								exit={{ opacity: 0, y: -20 }}
-								className="lg:hidden bg-[#0A0E17] border-b border-[#1E293B]"
-							>
-								<div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
-									<Link
-										href="#features"
-										className="block px-3 py-2 text-base font-medium text-foreground hover:text-accent"
-										onClick={() => setMobileMenuOpen(false)}
-									>
-										Features
-									</Link>
-									<Link
-										href="#how-it-works"
-										className="block px-3 py-2 text-base font-medium text-foreground hover:text-accent"
-										onClick={() => setMobileMenuOpen(false)}
-									>
-										How it Works
-									</Link>
-									<Link
-										href="#testimonials"
-										className="block px-3 py-2 text-base font-medium text-foreground hover:text-accent"
-										onClick={() => setMobileMenuOpen(false)}
-									>
-										Testimonials
-									</Link>
-									<Link
-										href="#download"
-										className="block px-3 py-2 text-base font-medium text-foreground hover:text-accent"
-										onClick={() => setMobileMenuOpen(false)}
-									>
-										Download
-									</Link>
-									<LocaleSelector className="block px-2 py-2 text-base font-medium text-foreground hover:text-accent" />
-									<Link
-										href="#download"
-										className="block px-3 py-2 text-base font-medium bg-primary hover:bg-primary-dark text-white rounded-md mt-4"
-										onClick={() => setMobileMenuOpen(false)}
-									>
-										Get Started
-									</Link>
-								</div>
-							</motion.div>
-						</T>
-					)}
-				</Var>
+				{mobileMenuOpen && (
+					<div className="lg:hidden absolute top-full left-0 right-0 bg-background border-b border-[#2D3748] py-4">
+						<div className="container mx-auto px-4">
+							<nav className="flex flex-col space-y-4">
+								<a
+									href="#demo"
+									onClick={(e) => handleNavClick(e, 'demo')}
+									className="text-foreground hover:text-accent transition-colors py-2"
+								>
+									Demo
+								</a>
+								<a
+									href="#features"
+									onClick={(e) => handleNavClick(e, 'features')}
+									className="text-foreground hover:text-accent transition-colors py-2"
+								>
+									Features
+								</a>
+								<a
+									href="#how-it-works"
+									onClick={(e) => handleNavClick(e, 'how-it-works')}
+									className="text-foreground hover:text-accent transition-colors py-2"
+								>
+									How it Works
+								</a>
+								<Link
+									href="https://devpost.com/software/capitalx"
+									className="bg-primary hover:bg-primary-dark text-white px-6 py-2 rounded-full transition-colors font-medium text-center"
+									onClick={() => setMobileMenuOpen(false)}
+								>
+									Get Started
+								</Link>
+							</nav>
+						</div>
+					</div>
+				)}
 			</header>
 		</T>
 	);

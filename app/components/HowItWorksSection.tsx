@@ -1,46 +1,43 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { PlusCircle, CreditCard, Smartphone, Sparkles } from "lucide-react";
-import { Var, T } from "gt-next";
-import { useGT } from "gt-next/client";
+import { T } from "gt-next";
+import { Cpu, Shield, CreditCard, LineChart, Smartphone, Zap } from "lucide-react";
+
+const technologies = [
+	{
+		title: "AI & Machine Learning",
+		description: "Fine-tuned Gemma-27B model on Modal Labs for intelligent card selection and Google Cloud Vision for card recognition",
+		icon: <Cpu className="h-8 w-8 text-primary" />,
+	},
+	{
+		title: "Secure Infrastructure",
+		description: "Supabase authentication and storage combined with Knot TransactionLink for secure card management",
+		icon: <Shield className="h-8 w-8 text-primary" />,
+	},
+	{
+		title: "Mobile First",
+		description: "Built with React Native & Expo for a seamless cross-platform experience",
+		icon: <Smartphone className="h-8 w-8 text-primary" />,
+	},
+	{
+		title: "Smart Analytics",
+		description: "Real-time transaction analysis and reward optimization powered by Knot API",
+		icon: <LineChart className="h-8 w-8 text-primary" />,
+	},
+	{
+		title: "Card Management",
+		description: "Instant card digitization and benefit tracking with Google Cloud Vision",
+		icon: <CreditCard className="h-8 w-8 text-primary" />,
+	},
+	{
+		title: "Real-time Processing",
+		description: "Flask backend with Gemini 1.5 for instant recommendations and Perplexity API for smart product search",
+		icon: <Zap className="h-8 w-8 text-primary" />,
+	},
+];
 
 export default function HowItWorksSection() {
-	const t = useGT()
-	const steps = [
-		{
-			icon: <PlusCircle className="h-8 w-8 text-accent" />,
-			title: t("Connect Your Cards"),
-			description: t(
-				"Securely link your credit cards to capitalX with bank-level encryption."
-			),
-			delay: 0.1,
-		},
-		{
-			icon: <CreditCard className="h-8 w-8 text-accent" />,
-			title: t("Set Your Preferences"),
-			description:
-				t("Tell us which rewards matter most to you - cashback, points, miles, or specific benefits."),
-			delay: 0.2,
-		},
-		{
-			icon: <Smartphone className="h-8 w-8 text-accent" />,
-			title: t("Shop Through Our App"),
-			description: t(
-				"Make purchases through the capitalX app at thousands of supported merchants."
-			),
-			delay: 0.3,
-		},
-		{
-			icon: <Sparkles className="h-8 w-8 text-accent" />,
-			title: t("Get Smart Recommendations"),
-			description: t(
-				"Our AI automatically selects the best card for each purchase to maximize your rewards."
-			),
-			delay: 0.4,
-		},
-	];
-
 	return (
 		<T id="components.howitworkssection.0">
 			<section id="how-it-works" className="py-24 bg-[#060A13] relative">
@@ -66,162 +63,61 @@ export default function HowItWorksSection() {
 							transition={{ duration: 0.5 }}
 						>
 							<h2 className="text-3xl md:text-4xl font-bold mb-6 text-white">
-								How{" "}
+								Powered by{" "}
 								<span className="bg-gradient-to-r from-accent to-primary bg-clip-text text-transparent">
-									capitalX
-								</span>{" "}
-								Works
+									Advanced Technology
+								</span>
 							</h2>
 							<p className="text-xl text-gray-300">
-								Our simple process helps you maximize rewards with every
-								purchase
+								Our cutting-edge tech stack delivers intelligent card management and real-time optimization
 							</p>
 						</motion.div>
 					</div>
 
-					<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-						<Var>
-							{steps.map((step, index) => (
-								<motion.div
-									key={index}
-									initial={{ opacity: 0, y: 20 }}
-									whileInView={{ opacity: 1, y: 0 }}
-									viewport={{ once: true }}
-									transition={{ duration: 0.5, delay: step.delay }}
-									className="relative"
-								>
-									<div className="bg-card border border-[#2D3748] rounded-xl p-6 shadow-lg h-full">
-										<div className="bg-[#1A2234] rounded-full w-16 h-16 flex items-center justify-center mb-6">
-											{step.icon}
-										</div>
-										<div className="absolute -top-3 -right-3 bg-primary rounded-full w-8 h-8 flex items-center justify-center text-white font-bold">
-											{index + 1}
-										</div>
-										<h3 className="text-xl font-semibold mb-3 text-white">
-											{step.title}
-										</h3>
-										<p className="text-gray-300">{step.description}</p>
-									</div>
-
-									{index < steps.length - 1 && (
-										<div className="hidden lg:block absolute top-1/2 -right-4 transform translate-x-full z-10">
-											<svg
-												width="40"
-												height="12"
-												viewBox="0 0 40 12"
-												fill="none"
-												xmlns="http://www.w3.org/2000/svg"
-											>
-												<path
-													d="M0 6H38M38 6L33 1M38 6L33 11"
-													stroke="#2563EB"
-													strokeWidth="2"
-													strokeLinecap="round"
-													strokeLinejoin="round"
-												/>
-											</svg>
-										</div>
-									)}
-								</motion.div>
-							))}
-						</Var>
+					<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+						{technologies.map((tech, index) => (
+							<motion.div
+								key={index}
+								initial={{ opacity: 0, y: 20 }}
+								whileInView={{ opacity: 1, y: 0 }}
+								viewport={{ once: true }}
+								transition={{ duration: 0.5, delay: index * 0.1 }}
+								className="bg-[#1A1F2E] rounded-xl p-8 border border-[#2D3748]"
+							>
+								<div className="bg-[#2D3748]/20 rounded-full w-16 h-16 flex items-center justify-center mb-6">
+									{tech.icon}
+								</div>
+								<h3 className="text-xl font-semibold mb-4 text-white">
+									{tech.title}
+								</h3>
+								<p className="text-gray-300">
+									{tech.description}
+								</p>
+							</motion.div>
+						))}
 					</div>
 
 					<motion.div
 						initial={{ opacity: 0, y: 30 }}
 						whileInView={{ opacity: 1, y: 0 }}
 						viewport={{ once: true }}
-						transition={{ duration: 0.7, delay: 0.5 }}
-						className="mt-20 bg-gradient-to-br from-[#1A1F2E] to-[#0F1523] rounded-2xl overflow-hidden border border-[#2D3748] shadow-xl"
+						transition={{ duration: 0.5, delay: 0.6 }}
+						className="mt-16 text-center"
 					>
-						<div className="p-8 md:p-12">
-							<div className="flex flex-col md:flex-row items-center gap-8">
-								<div className="w-full md:w-1/2">
-									<h3 className="text-2xl md:text-3xl font-bold mb-4 text-white">
-										Smart Algorithm, Better Rewards
-									</h3>
-									<p className="text-gray-300 mb-6">
-										Our proprietary AI algorithm learns your spending patterns
-										and card benefits to continuously improve recommendations,
-										ensuring you never miss out on valuable rewards.
-									</p>
-									<div className="flex flex-col sm:flex-row gap-4">
-										<div className="bg-[#1A2234] rounded-lg p-4 flex gap-3 items-center">
-											<div className="text-accent text-2xl font-bold">45%</div>
-											<div className="text-sm text-gray-300">
-												Average increase in rewards earned
-											</div>
-										</div>
-										<div className="bg-[#1A2234] rounded-lg p-4 flex gap-3 items-center">
-											<div className="text-accent text-2xl font-bold">$340</div>
-											<div className="text-sm text-gray-300">
-												Average annual savings per user
-											</div>
-										</div>
-									</div>
-								</div>
-								<div className="w-full md:w-1/2 flex justify-center">
-									<div className="bg-[#0A0E17] rounded-xl overflow-hidden border border-[#2D3748] p-4 w-full max-w-sm">
-										<div className="flex justify-between items-center mb-6">
-											<div className="flex items-center">
-												<CreditCard className="h-6 w-6 text-accent mr-2" />
-												<span className="text-lg font-bold text-white">
-													Card Selection
-												</span>
-											</div>
-											<Sparkles className="h-5 w-5 text-primary" />
-										</div>
-
-										<Var>
-											{[
-												{
-													name: "Dining",
-													card: "Amex Gold",
-													reward: "4x points",
-													percent: "85%",
-												},
-												{
-													name: "Travel",
-													card: "Chase Sapphire",
-													reward: "3x points",
-													percent: "70%",
-												},
-												{
-													name: "Groceries",
-													card: "Blue Cash",
-													reward: "6% cash back",
-													percent: "90%",
-												},
-											].map((category, i) => (
-												<div key={i} className="mb-4 last:mb-0">
-													<div className="flex justify-between items-center mb-1.5">
-														<span className="text-gray-300">
-															{category.name}
-														</span>
-														<span className="text-accent text-sm">
-															{category.reward}
-														</span>
-													</div>
-													<div className="bg-[#1A2234] h-2 rounded-full">
-														<div
-															className="bg-gradient-to-r from-primary to-accent h-2 rounded-full"
-															style={{ width: category.percent }}
-														></div>
-													</div>
-													<div className="flex justify-between mt-1">
-														<span className="text-white text-xs">
-															{category.card}
-														</span>
-														<span className="text-gray-400 text-xs">
-															{category.percent}
-														</span>
-													</div>
-												</div>
-											))}
-										</Var>
-									</div>
-								</div>
-							</div>
+						<div className="bg-gradient-to-r from-primary/10 to-accent/10 rounded-xl p-8 max-w-4xl mx-auto border border-[#2D3748]">
+							<h3 className="text-2xl font-bold mb-4 text-white">
+								Not Just Another Card Manager
+							</h3>
+							<p className="text-gray-300 mb-6">
+								capitalX combines advanced AI, secure infrastructure, and real-time processing to deliver 
+								a next-generation financial management experience.
+							</p>
+							<a
+								href="https://devpost.com/software/capitalx"
+								className="inline-flex items-center justify-center bg-primary hover:bg-primary-dark text-white px-8 py-3 rounded-full text-lg font-medium transition-colors"
+							>
+								Learn More
+							</a>
 						</div>
 					</motion.div>
 				</div>
