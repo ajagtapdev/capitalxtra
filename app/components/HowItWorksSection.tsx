@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { T } from "gt-next";
+import { T, Var } from "gt-next";
 import { Cpu, Shield, CreditCard, LineChart, Smartphone, Zap } from "lucide-react";
 
 const technologies = [
@@ -75,26 +75,28 @@ export default function HowItWorksSection() {
 					</div>
 
 					<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-						{technologies.map((tech, index) => (
-							<motion.div
-								key={index}
-								initial={{ opacity: 0, y: 20 }}
-								whileInView={{ opacity: 1, y: 0 }}
-								viewport={{ once: true }}
-								transition={{ duration: 0.5, delay: index * 0.1 }}
-								className="bg-[#1A1F2E] rounded-xl p-8 border border-[#2D3748]"
-							>
-								<div className="bg-[#2D3748]/20 rounded-full w-16 h-16 flex items-center justify-center mb-6">
-									{tech.icon}
-								</div>
-								<h3 className="text-xl font-semibold mb-4 text-white">
-									{tech.title}
-								</h3>
-								<p className="text-gray-300">
-									{tech.description}
-								</p>
-							</motion.div>
-						))}
+						<Var>
+							{technologies.map((tech, index) => (
+								<motion.div
+									key={index}
+									initial={{ opacity: 0, y: 20 }}
+									whileInView={{ opacity: 1, y: 0 }}
+									viewport={{ once: true }}
+									transition={{ duration: 0.5, delay: index * 0.1 }}
+									className="bg-[#1A1F2E] rounded-xl p-8 border border-[#2D3748]"
+								>
+									<div className="bg-[#2D3748]/20 rounded-full w-16 h-16 flex items-center justify-center mb-6">
+										{tech.icon}
+									</div>
+									<h3 className="text-xl font-semibold mb-4 text-white">
+										{tech.title}
+									</h3>
+									<p className="text-gray-300">
+										{tech.description}
+									</p>
+								</motion.div>
+							))}
+						</Var>
 					</div>
 
 					<motion.div

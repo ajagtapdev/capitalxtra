@@ -3,7 +3,7 @@
 import { motion } from "framer-motion";
 import Image from "next/image";
 import { ChevronRight, Check, Smartphone, Wand2, Star, Shield } from "lucide-react";
-import { T } from "gt-next";
+import { T, Var } from "gt-next";
 
 const keyFeatures = [
 	{
@@ -67,12 +67,17 @@ export default function HeroSection() {
 								</div>
 
 								<div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
-									{keyFeatures.map((feature, index) => (
-										<div key={index} className="flex items-center bg-[#1A1F2E] rounded-lg p-4">
-											{feature.icon}
-											<span className="text-gray-300">{feature.label}</span>
-										</div>
-									))}
+									<Var>
+										{keyFeatures.map((feature, index) => (
+											<div 
+												key={index} 
+												className="flex items-center bg-[#1A1F2E] rounded-lg p-4"
+											>
+												{feature.icon}
+												<span className="text-gray-300">{feature.label}</span>
+											</div>
+										))}
+									</Var>
 								</div>
 							</motion.div>
 						</div>

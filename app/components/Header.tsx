@@ -95,42 +95,44 @@ export default function Header() {
 				</div>
 
 				{/* Mobile menu */}
-				{mobileMenuOpen && (
-					<div className="lg:hidden absolute top-full left-0 right-0 bg-background border-b border-[#2D3748] py-4">
-						<div className="container mx-auto px-4">
-							<nav className="flex flex-col space-y-4">
-								<a
-									href="#demo"
-									onClick={(e) => handleNavClick(e, 'demo')}
-									className="text-foreground hover:text-accent transition-colors py-2"
-								>
-									Demo
-								</a>
-								<a
-									href="#features"
-									onClick={(e) => handleNavClick(e, 'features')}
-									className="text-foreground hover:text-accent transition-colors py-2"
-								>
-									Features
-								</a>
-								<a
-									href="#how-it-works"
-									onClick={(e) => handleNavClick(e, 'how-it-works')}
-									className="text-foreground hover:text-accent transition-colors py-2"
-								>
-									How it Works
-								</a>
-								<Link
-									href="https://devpost.com/software/capitalx"
-									className="bg-primary hover:bg-primary-dark text-white px-6 py-2 rounded-full transition-colors font-medium text-center"
-									onClick={() => setMobileMenuOpen(false)}
-								>
-									Get Started
-								</Link>
-							</nav>
+				<Var>
+					{mobileMenuOpen && (
+						<div className="lg:hidden absolute top-full left-0 right-0 bg-background border-b border-[#2D3748] py-4">
+							<div className="container mx-auto px-4">
+								<nav className="flex flex-col space-y-4">
+									<a
+										href="#demo"
+										onClick={(e) => handleNavClick(e, 'demo')}
+										className="text-foreground hover:text-accent transition-colors py-2"
+									>
+										Demo
+									</a>
+									<a
+										href="#features"
+										onClick={(e) => handleNavClick(e, 'features')}
+										className="text-foreground hover:text-accent transition-colors py-2"
+									>
+										Features
+									</a>
+									<a
+										href="#how-it-works"
+										onClick={(e) => handleNavClick(e, 'how-it-works')}
+										className="text-foreground hover:text-accent transition-colors py-2"
+									>
+										How it Works
+									</a>
+									<Link
+										href="https://devpost.com/software/capitalx"
+										className="bg-primary hover:bg-primary-dark text-white px-6 py-2 rounded-full transition-colors font-medium text-center"
+										onClick={() => setMobileMenuOpen(false)}
+									>
+										Get Started
+									</Link>
+								</nav>
+							</div>
 						</div>
-					</div>
-				)}
+					)}
+				</Var>
 			</header>
 		</T>
 	);
