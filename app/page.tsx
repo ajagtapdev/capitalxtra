@@ -5,6 +5,7 @@ import TestimonialsSection from "./components/TestimonialsSection";
 import DownloadSection from "./components/DownloadSection";
 import Footer from "./components/Footer";
 import VideoDemoSection from './components/VideoDemoSection';
+import FeaturesSection from "./components/FeaturesSection";
 
 export default function Home() {
   return (
@@ -12,6 +13,7 @@ export default function Home() {
       <Header />
       <main>
         <HeroSection />
+        <FeaturesSection />
         <VideoDemoSection />
         <HowItWorksSection />
         <TestimonialsSection />

@@ -7,7 +7,7 @@ import { Var, T } from "gt-next";
 export default function Footer() {
 	return (
 		<T id="components.footer.0">
-			<footer className="bg-[#1A1F2E] pt-16 pb-8 border-t border-[#2D3748]">
+			<footer className="bg-[#1F2435] pt-16 pb-8 border-t border-[#2D3748]">
 				<div className="container mx-auto px-4 sm:px-6 lg:px-8">
 					<div className="flex flex-col md:flex-row justify-between items-center">
 						<div className="mb-8 md:mb-0">
